@@ -31,8 +31,9 @@ class Productor(threading.Thread):
     def run(self):
         while True:
             numero = random.randint(100, 500)
-            time.sleep(self.PT)
             self.queue.put(numero)
+            time.sleep(self.PT)
+
 
 class Consumer(threading.Thread):
     def __init__(self, queue,X,CT):
